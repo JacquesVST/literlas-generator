@@ -3,7 +3,7 @@
   "publisher": "JacquesVST",
   "displayName": "Literal Generator",
   "description": "Generates entries on the i18n class of a module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "icon": "literal.png",
   "engines": {
     "vscode": "^1.77.0"
