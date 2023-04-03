@@ -40,8 +40,13 @@ export function activate(context: vscode.ExtensionContext) {
 				const targetObject = objectTermQuery.split('.')[0];
 				const targetTerm = objectTermQuery.split('.')[1];
 
-				// Find which module the source value is from (won't work from the app)
-				const path = editor.document.fileName.split('\\');
+				// Find which module the source value is from
+				let path = editor.document.fileName.split('\\');
+				if (path.length === 1){
+					path = editor.document.fileName.split('/');
+				}
+				
+				
 				let indexOfModule = path.indexOf('libs');
 				if (indexOfModule === -1) {
 					indexOfModule = path.indexOf('modules');
