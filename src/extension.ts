@@ -65,10 +65,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 						if (indexOfTarget !== -1) {
 							const indexForInsertion = contentText.indexOf('}', indexOfTarget);
-							contentText = contentText.slice(0, indexForInsertion) + `    ${targetTerm}: any;\n    ` + contentText.slice(indexForInsertion);
+							contentText = contentText.slice(0, indexForInsertion) + `  ${targetTerm}: any;\n  ` + contentText.slice(indexForInsertion);
 						} else {
 							const indexForInsertion = contentText.lastIndexOf('}');
-							contentText = contentText.slice(0, indexForInsertion) + `\n    ${targetObject}!: {\n        ${targetTerm}: any;\n    };\n` + contentText.slice(indexForInsertion);
+							contentText = contentText.slice(0, indexForInsertion) + `\n  ${targetObject}!: {\n  ${targetTerm}: any;\n  };\n` + contentText.slice(indexForInsertion);
 						}
 
 						// Couldn't convert a .ts file content string to a valid JSON and convert back to ensure object rules, check the affeceted literals.ts for inconsistencies
